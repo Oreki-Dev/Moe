@@ -172,6 +172,7 @@ query ($page: Int, $start: Int, $end: Int) {
   }
 }
 `;
+
 export const Trending = `query ($page: Int, $start: Int, $end: Int) {
   Page(page:$page){
     pageInfo {
