@@ -1,0 +1,15 @@
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5865F2;
+}
+
+body {
+    font-family: 'Potta One';
+}
