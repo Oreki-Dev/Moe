@@ -172,3 +172,33 @@ query ($page: Int, $start: Int, $end: Int) {
   }
 }
 `;
+export const Trending = `query ($page: Int, $start: Int, $end: Int) {
+  Page(page:$page){
+    pageInfo {
+      total
+      perPage
+      currentPage
+      lastPage
+      hasNextPage
+    }
+    media(type: ANIME, sort: TRENDING_DESC) {
+      id
+      title {
+        romaji
+      }
+      description
+      status
+      episodes
+      source
+      genres
+      averageScore
+      popularity
+      siteUrl
+      coverImage {
+        large
+      }
+      format
+      trending
+    }
+  }
+}`;
