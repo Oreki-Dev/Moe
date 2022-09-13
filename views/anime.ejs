@@ -32,7 +32,7 @@
             <section>
                 <div class="container bg-dark py-5">
                     <div class="py-5 p-lg-5">
-                        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px">
+                        <div class="row mx-auto" style="max-width: 900px">
                                 <div class="card mb-3 text-center">
                                     <div class="row">
                                       <div class="col-md-12">
@@ -44,7 +44,9 @@
                                           <span class="badge bg-primary mb-2">Source: <%= anime.source ?? "Unknown Source" %></span>
                                           <span class="badge bg-primary mb-2">Episodes: <%= anime.episodes ?? "?" %></span>
                                           <span class="badge bg-primary mb-2">Popularity: <%= anime.popularity ?? "0" %></span>
-                                          <span class="badge bg-primary mb-2">Score: <%= anime.averageScore ?? "0" %></span>   
+                                          <span class="badge bg-primary mb-2">Score: <%= anime.averageScore ?? "0" %></span> 
+                                          <span class="badge bg-primary mb-2">Start: <%= anime.startDate?.day ?? "0" %>/<%= anime.startDate?.month ?? "0" %>/<%= anime.startDate?.year ?? "0" %></span>  
+                                          <span class="badge bg-primary mb-2">End: <%= anime.endDate?.day ?? "0" %>/<%= anime.endDate?.month ?? "0" %>/<%= anime.endDate?.year ?? "0" %></span>  
                                           <p class="card-text"><%= replaceHtml(anime.description) ?? "No Description" %></p>
                                           <span class="badge bg-primary mb-2">Genres: <%= anime.genres.join(", ") ?? "Not Known" %></span>
                                         </div>
@@ -54,20 +56,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="container py-4 py-xl-5">
+                <div class="container py-4 py-xl-5 text-center">
                     <div class="row mb-5">
                         <div class="col-md-8 col-xl-6 text-center mx-auto">
                             <h2>Characters</h2>
                         </div>
                     </div>
                     <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
-                        <% anime.characters.forEach((character) => { %>
+                        <% anime.characters.nodes.forEach((character) => { %>
                             <div class="col">
                                 <div>
                                     <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= character.nodes.image.large %>" />
                                         <div>
-                                            <p class="fw-bold text-primary mb-0"><%= character.nodes.name.full %></p>
-                                            <a href="<%= character.nodes.siteUrl %>"><p class="text-muted mb-0">View More Info</p></a>
+                                            <p class="fw-bold text-primary mb-0"><%= character.name.full %></p>
+                                            <a href="<%= character.siteUrl %>"><p class="text-muted mb-0">View More Info</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -75,19 +77,19 @@
                         <% }) %>
                     </div>
                 </div>
-                <div class="container py-4 py-xl-5">
+                <div class="container py-4 py-xl-5 text-center">
                     <div class="row mb-5">
                         <div class="col-md-8 col-xl-6 text-center mx-auto">
                             <h2>Studios</h2>
                         </div>
                     </div>
                     <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
-                        <% anime.Studios.forEach((studio) => { %>
+                        <% anime.studios.nodes.forEach((studio) => { %>
                             <div class="col">
                                 <div>
                                         <div>
-                                            <p class="fw-bold text-primary mb-0"><%= studio.nodes.name %></p>
-                                            <a href="<%= studio.nodes.siteUrl %>"><p class="text-muted mb-0">View More Info</p></a>
+                                            <p class="fw-bold text-primary mb-0"><%= studio.name %></p>
+                                            <a href="<%= studio.siteUrl %>"><p class="text-muted mb-0">View More Info</p></a>
                                         </div>
                                     </div>
                                 </div>

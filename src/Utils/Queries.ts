@@ -205,8 +205,8 @@ export const Trending = `query ($page: Int) {
 }`;
 
 export const Anime = `
-query ($search: String, $type: MediaType) {
-  Media(search: $search, type: $type) {
+query ($id: Int, $type: MediaType) {
+  Media(id: $id, type: $type) {
     id
     siteUrl
     title {
