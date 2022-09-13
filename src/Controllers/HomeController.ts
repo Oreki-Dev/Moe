@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { Trending } from "../Utils/Queries";
 import { AniFetch } from "../Utils/Anilist";
+import { ReplaceHtml } from "../Utils/Functions";
 
 export const index = async (req: Request, res: Response) => {
   const variables = {
@@ -8,6 +9,7 @@ export const index = async (req: Request, res: Response) => {
   };
   const { data } = await AniFetch(Trending, variables);
   res.render("home", {
+    replaceHtml: ReplaceHtml,
     animes: data.Page.media,
   });
 };
