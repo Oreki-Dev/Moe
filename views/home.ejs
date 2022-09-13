@@ -44,31 +44,42 @@
                 </div>
             </div>
         </header>
-        <section>
-            <% animes.forEach((anime) => { %>
-                <div class="card mb-3 text-center">
+            <section>
+                <div class="container bg-dark py-5">
                     <div class="row">
-                      <div class="col-md-12">
-                        <img src="<%= anime.coverImage.large %>" class="img-fluid rounded-start">
-                      </div>
-                      <div class="col-md-12">
-                        <div class="card-body">
-                          <h5 class="card-title"><%= anime.title?.romaji ?? "No Title" %></h5>
-                          <span class="badge bg-primary mb-2">Source: <%= anime.source ?? "Unknown Source" %></span>
-                          <span class="badge bg-primary mb-2">Episodes: <%= anime.episodes ?? "?" %></span>
-                          <span class="badge bg-primary mb-2">Popularity: <%= anime.popularity ?? "0" %></span>
-                          <span class="badge bg-primary mb-2">Score: <%= anime.averageScore ?? "0" %></span>   
-                          <p class="card-text"><%= anime.description ?? "No Description" %></p>
-                          <span class="badge bg-primary mb-2">Genres: <%= anime.genres.join(", ") ?? "Not Known" %></span>
-                          <a href="/anime/<%= anime.id %>">
-                            <p class="card-text"><small class="text-muted">View More Info</small></p>
-                          </a>
+                        <div class="col-md-8 col-xl-6 text-center mx-auto">
+                            <h3 class="fw-bold text-success mb-2">Trending Anime Right Now -</h3>
                         </div>
-                      </div>
                     </div>
-                  </div>
-            <% }) %>
-        </section>
+                    <div class="py-5 p-lg-5">
+                        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px">
+                            <% animes.forEach((anime) => { %>
+                                <div class="card mb-3 text-center">
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                        <img src="<%= anime.coverImage.large %>" class="img-fluid rounded-start">
+                                      </div>
+                                      <div class="col-md-12">
+                                        <div class="card-body">
+                                          <h5 class="card-title"><%= anime.title?.romaji ?? "No Title" %></h5>
+                                          <span class="badge bg-primary mb-2">Source: <%= anime.source ?? "Unknown Source" %></span>
+                                          <span class="badge bg-primary mb-2">Episodes: <%= anime.episodes ?? "?" %></span>
+                                          <span class="badge bg-primary mb-2">Popularity: <%= anime.popularity ?? "0" %></span>
+                                          <span class="badge bg-primary mb-2">Score: <%= anime.averageScore ?? "0" %></span>   
+                                          <p class="card-text"><%= anime.description ?? "No Description" %></p>
+                                          <span class="badge bg-primary mb-2">Genres: <%= anime.genres.join(", ") ?? "Not Known" %></span>
+                                          <a href="/anime/<%= anime.id %>">
+                                            <p class="card-text"><small class="text-muted">View More Info</small></p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </section>
         <footer class="bg-dark">
             <div class="container py-4 py-lg-5">
                 <hr />
