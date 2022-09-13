@@ -203,3 +203,57 @@ export const Trending = `query ($page: Int) {
     }
   }
 }`;
+
+export const Anime = `
+query ($search: String, $type: MediaType) {
+  Media(search: $search, type: $type) {
+    id
+    siteUrl
+    title {
+        romaji
+        english
+        native
+    }
+    startDate {
+      year
+      month
+      day
+    }
+    endDate {
+      year
+      month
+      day
+    }
+    coverImage {
+        large
+        medium
+    }
+    season
+    seasonYear
+    status
+    description
+    isAdult
+    characters {
+      nodes {
+        name {
+          full
+        }
+        image {
+          large
+        }
+        siteUrl
+      }
+    }
+    studios {
+      nodes {
+          name
+          siteUrl
+        }
+    }
+    genres
+    popularity
+    averageScore
+    episodes
+  }
+}
+`;
