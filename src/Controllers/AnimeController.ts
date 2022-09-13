@@ -4,7 +4,7 @@ import { AniFetch } from "../Utils/Anilist";
 import { ReplaceHtml } from "../Utils/Functions";
 
 export const anime = async (req: Request, res: Response) => {
-  const id: number = req.params.id as number;
+  const id: string = req.params.id as string;
   const variables = {
     id: id,
     type: "ANIME"
