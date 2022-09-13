@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Oreki | Home Page</title>
+        <meta name="theme-color" content="#5865F2">
+        <meta property="og:url" content="/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Oreki | Home">
+        <meta property="og:description" content="Hi I'm Oreki, Anime And Genshin Enjoyer">
+        <%- include('partials/icon') %>
+        <meta property="og:site_name" content="Oreki">
+        <%- include('partials/css') %>
+    </head>
+    <body style="/*background: url(&quot;design.jpg&quot;);*/ background-position: 0 -60px">
+        <nav class="navbar navbar-dark navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/"><span>Oreki</span></a
+                ><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                    <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/#projects">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/#contact">Contact Me</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/profile">My Anime Stats</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="https://anilist.co/user/OrekiDev">Anilist Profile</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="https://myanimelist.net/profile/Oreki-Dev">MaL Profile</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <header class="bg-dark pt-5">
+            <div class="container pt-4 pt-xl-5">
+                <div class="row pt-5">
+                    <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
+                        <div class="text-center">
+                            <h1 class="fw-bold">Moe</h1>
+                            <h3 class="fw-bold">Everything Related To Anime</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <section>
+            <% animes.forEach((anime) => { %>
+                <div class="card mb-3 text-center">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <img src="<%= anime.coverImage.large %>" class="img-fluid rounded-start">
+                      </div>
+                      <div class="col-md-12">
+                        <div class="card-body">
+                          <h5 class="card-title"><%= anime.title?.romaji ?? "No Title" %></h5>
+                          <span class="badge bg-primary mb-2">Source: <%= anime.source ?? "Unknown Source" %></span>
+                          <span class="badge bg-primary mb-2">Episodes: <%= anime.episodes ?? "?" %></span>
+                          <span class="badge bg-primary mb-2">Popularity: <%= anime.popularity ?? "0" %></span>
+                          <span class="badge bg-primary mb-2">Score: <%= anime.averageScore ?? "0" %></span>   
+                          <p class="card-text"><%= anime.description ?? "No Description" %></p>
+                          <span class="badge bg-primary mb-2">Genres: <%= anime.genres.join(", ") ?? "Not Known" %></span>
+                          <a href="/anime/<%= anime.id %>">
+                            <p class="card-text"><small class="text-muted">View More Info</small></p>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            <% }) %>
+        </section>
+        <footer class="bg-dark">
+            <div class="container py-4 py-lg-5">
+                <hr />
+                <div class="text-muted d-flex justify-content-between align-items-center pt-3">
+                    <p class="mb-0">Copyright © 2022 Moe</p>
+                </div>
+            </div>
+        </footer>
+        <%- include('partials/js') %>
+    </body>
+</html>

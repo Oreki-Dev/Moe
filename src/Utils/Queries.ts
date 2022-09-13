@@ -173,7 +173,7 @@ query ($page: Int, $start: Int, $end: Int) {
 }
 `;
 
-export const Trending = `query ($page: Int, $start: Int, $end: Int) {
+export const Trending = `query ($page: Int) {
   Page(page:$page){
     pageInfo {
       total

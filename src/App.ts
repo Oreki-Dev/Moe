@@ -3,8 +3,7 @@ import compression from "compression";
 import bodyParser from "body-parser";
 import rateLimit from "express-rate-limit";
 
-import * as HomeController from "./Controllers/Home";
-import * as AnimeController from "./Controllers/Home";
+import * as HomeController from "./Controllers/HomeController";
 
 const App = express();
 
@@ -26,9 +25,6 @@ App.use(express.static("public"));
 App.use(limiter);
 
 App.get("/", HomeController.index);
-App.get("/anime/:name", AnimeController.search);
-App.get("/chart", AnimeController.chart);
-App.get("/schedule", AnimeController.schedule);
 
 App.get("*", HomeController.error);
 export default App;
