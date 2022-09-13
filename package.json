@@ -1,6 +1,6 @@
 {
   "name": "Animw-Website",
-  "version": "0.1.o",
+  "version": "0.1.0",
   "description": "An Anime Based Website",
   "main": "dist",
   "scripts": {
