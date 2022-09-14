@@ -63,8 +63,7 @@
                                           <span class="badge bg-primary mb-2">Episodes: <%= anime.episodes ?? "?" %></span>
                                           <span class="badge bg-primary mb-2">Popularity: <%= anime.popularity ?? "0" %></span>
                                           <span class="badge bg-primary mb-2">Score: <%= anime.averageScore ?? "0" %></span>   
-                                          <p class="card-text"><%= replaceHtml(anime.description) ?? "No Description" %></p>
-                                          <span class="badge bg-primary mb-2">Genres: <br> <%= anime.genres.join(", ") ?? "Not Known" %></span>
+                                          <p class="card-text">Genres: <br> <%= anime.genres.join(", ") ?? "Not Known" %></p>
                                           <a href="/anime/<%= anime.id %>">
                                             <p class="card-text"><small class="text-muted">View More Info</small></p>
                                           </a>

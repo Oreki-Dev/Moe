@@ -48,7 +48,7 @@
                                           <span class="badge bg-primary mb-2">Start: <%= anime.startDate?.day ?? "0" %>/<%= anime.startDate?.month ?? "0" %>/<%= anime.startDate?.year ?? "0" %></span>  
                                           <span class="badge bg-primary mb-2">End: <%= anime.endDate?.day ?? "0" %>/<%= anime.endDate?.month ?? "0" %>/<%= anime.endDate?.year ?? "0" %></span>  
                                           <p class="card-text"><%= replaceHtml(anime.description) ?? "No Description" %></p>
-                                          <span class="badge bg-primary mb-2">Genres: <%= anime.genres.join(", ") ?? "Not Known" %></span>
+                                          <p class="card-text">Genres: <%= anime.genres.join(", ") ?? "Not Known" %></p>
                                         </div>
                                     </div>
                                 </div>
