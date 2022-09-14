@@ -260,6 +260,38 @@ query ($id: Int, $type: MediaType) {
 }
 `;
 
+export const User = `
+query($id: Int) {
+  User(id: $id) {
+    id
+    name
+    about
+    avatar {
+      large
+    }
+    statistics {
+      anime {
+        count
+        episodesWatched
+      }
+    }
+    favourites {
+      anime {
+        nodes {
+          id
+          title {
+            romaji
+          }
+          coverImage {
+            large
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
 export const Studio = `
 query($id: Int) {
   Studio(id: $id) {
@@ -359,6 +391,7 @@ export const SearchUser = `
 query($page: Int, $search: String) {
   Page(page: $page) {
     users(search: $search) {
+      id
       name
       avatar {
         large
