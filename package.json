@@ -1,7 +1,7 @@
 {
-  "name": "Animw-Website",
+  "name": "Moe",
   "version": "0.1.0",
-  "description": "An Anime Based Website",
+  "description": "An Anime Website",
   "main": "dist",
   "scripts": {
     "build": "tsc",
