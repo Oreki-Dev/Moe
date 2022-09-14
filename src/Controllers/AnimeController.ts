@@ -7,7 +7,7 @@ export const anime = async (req: Request, res: Response) => {
   const id: string = req.params.id as string;
   const variables = {
     id: parseInt(id),
-    type: "ANIME"
+    type: "ANIME",
   };
   const { data } = await AniFetch(Anime, variables);
   res.render("anime", {
