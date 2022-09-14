@@ -28,6 +28,7 @@ App.use(limiter);
 
 App.get("/", HomeController.index);
 App.get("/anime/:id", AnimeController.anime);
+App.get("/character/:id", );
 App.get("/search", SearchController.index);
 
 App.post("/search", SearchController.postIndex);

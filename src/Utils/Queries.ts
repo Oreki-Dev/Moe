@@ -258,10 +258,43 @@ query ($id: Int, $type: MediaType) {
 }
 `;
 
+export const Character = `
+query($id: Int) {
+  Character(id: $id) {
+    id
+    name {
+      full
+    }
+    image {
+      large
+    }
+    description
+    gender
+    dateOfBirth {
+      year
+      month
+      day
+    }
+    age
+    media(type: ANIME) {
+      nodes {
+        title {
+          romaji
+        }
+        coverImage {
+          large
+        }
+      }
+    }
+    favourites
+  }
+}
+`;
+
 export const SearchAnime = `
 query($page: Int, $search: String) {
   Page(page: $page) {
-    media(search: $search) {
+    media(search: $search, type: ANIME) {
       id
       title {
         romaji
