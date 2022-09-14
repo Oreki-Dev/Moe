@@ -17,7 +17,7 @@ export const postIndex = async (req: Request, res: Response) => {
 
   const variables = {
     page: 1,
-    search: option,
+    search: search,
   };
   if (option === "anime") {
     const { data } = await AniFetch(SearchAnime, variables);
