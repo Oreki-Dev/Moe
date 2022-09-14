@@ -3,13 +3,14 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-        <title>Moe | Home Page</title>
+        <title>Moe | <%= anime.title.romaji %></title>
         <meta name="theme-color" content="#5865F2">
         <meta property="og:url" content="/">
         <meta property="og:type" content="website">
-        <meta property="og:title" content="Moe | Home">
-        <meta property="og:description" content="Moe, Eveyrthing Related To Anime">
-        <%- include('partials/icon') %>
+        <meta property="og:title" content="Moe | Anime">
+        <meta property="og:description" content="<%= anime.title.romaji %>">
+        <link rel="icon" href="<%= anime.coverImage.large %>">
+        <meta property="og:image" content="<%= anime.coverImage.large %>">
         <meta property="og:site_name" content="Anime Is My Moe">
         <%- include('partials/css') %>
     </head>
