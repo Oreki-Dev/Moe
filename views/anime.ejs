@@ -69,7 +69,7 @@
                                     <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= character.image.large %>" />
                                         <div>
                                             <p class="fw-bold text-primary mb-0"><%= character.name.full %></p>
-                                            <a href="<%= character.siteUrl %>"><p class="text-muted mb-0">View More Info</p></a>
+                                            <a href="/character/<%= character.id %>"><p class="text-muted mb-0">View More Info</p></a>
                                         </div>
                                     </div>
                                 </div>
@@ -89,7 +89,7 @@
                                 <div>
                                         <div>
                                             <p class="fw-bold text-primary mb-0"><%= studio.name %></p>
-                                            <a href="<%= studio.siteUrl %>"><p class="text-muted mb-0">View More Info</p></a>
+                                            <a href="/studio/<%= studio.id %>"><p class="text-muted mb-0">View More Info</p></a>
                                         </div>
                                     </div>
                                 </div>
