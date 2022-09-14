@@ -261,7 +261,7 @@ query ($id: Int, $type: MediaType) {
 export const SearchAnime = `
 query($page: Int, $search: String) {
   Page(page: $page) {
-    media(search: "Char") {
+    media(search: $search) {
       id
       title {
         romaji
@@ -300,7 +300,7 @@ query($page: Int, $search: String) {
 export const SearchUser = `
 query($page: Int, $search: String) {
   Page(page: $page) {
-    users(search: "Oreki") {
+    users(search: $search) {
       name
       avatar {
         large
