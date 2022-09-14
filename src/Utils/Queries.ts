@@ -235,6 +235,7 @@ query ($id: Int, $type: MediaType) {
     isAdult
     characters {
       nodes {
+        id
         name {
           full
         }
