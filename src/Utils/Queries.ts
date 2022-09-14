@@ -272,6 +272,7 @@ query($id: Int) {
         title {
           romaji
         }
+        type
         coverImage {
           large
         }
