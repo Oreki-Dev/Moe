@@ -5,6 +5,7 @@ import rateLimit from "express-rate-limit";
 
 import * as HomeController from "./Controllers/HomeController";
 import * as AnimeController from "./Controllers/AnimeController";
+import * as SearchController from "./Controllers/SearchController";
 
 const App = express();
 
@@ -26,7 +27,10 @@ App.use(express.static("public"));
 App.use(limiter);
 
 App.get("/", HomeController.index);
-App.get("/anime/:id", AnimeController.anime)
+App.get("/anime/:id", AnimeController.anime);
+App.get("/search", SearchController.index);
+
+App.post("/search", SearchController.postIndex);
 
 App.get("*", HomeController.error);
 export default App;

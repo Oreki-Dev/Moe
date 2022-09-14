@@ -257,3 +257,55 @@ query ($id: Int, $type: MediaType) {
   }
 }
 `;
+
+export const SearchAnime = `
+query($page: Int, $search: String) {
+  Page(page: $page) {
+    media(search: "Char") {
+      id
+      title {
+        romaji
+      }
+      coverImage {
+        large
+      }
+    }
+  }
+}
+`;
+
+export const SearchCharacter = `
+query($page: Int, $search: String) {
+  Page(page: $page) {
+    characters(search: $search) {
+      id
+      name {
+        full
+      }
+      image {
+        large
+      }
+      media {
+        nodes {
+          title {
+            romaji
+          }
+        }
+      }
+    }
+  }
+}
+`;
+
+export const SearchUser = `
+query($page: Int, $search: String) {
+  Page(page: $page) {
+    users(search: "Oreki") {
+      name
+      avatar {
+        large
+      }
+    }
+  }
+}
+`;

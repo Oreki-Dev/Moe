@@ -29,6 +29,18 @@
                 </div>
             </div>
         </nav>
+        <header class="bg-dark pt-5">
+            <div class="container pt-4 pt-xl-5">
+                <div class="row pt-5">
+                    <div class="col-md-8 col-xl-6 text-center text-md-start mx-auto">
+                        <div class="text-center">
+                            <h1 class="fw-bold">Moe</h1>
+                            <h3 class="fw-bold">Everything Related To Anime</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
         <section class="py-5">
             <div id="contact" class="container">
                 <div class="row mb-5">
@@ -40,7 +52,7 @@
                     <div class="col-md-6 col-xl-4">
                         <div>
                             <form class="p-3 p-xl-4" method="post">
-                                <div class="mb-3"><input id="name-1" class="form-control" type="text" name="name" placeholder="Name" /></div>
+                                <div class="mb-3"><input id="name-1" class="form-control" type="text" name="name" placeholder="Name" required/></div>
                                 <div class="mb-3">
                                     <select id="select-1" type="text" name="option" class="form-select" aria-label="Anime">
                                         <option value="anime">Anime</option>
@@ -57,6 +69,72 @@
                     </div>
                 </div>
             </div>
+        <% if (animes) { %>
+            <div class="container py-4 py-xl-5 text-center">
+                <div class="row mb-5">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h2>All Animes Related To Your Search</h2>
+                    </div>
+                </div>
+                <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                    <% animes.forEach((anime) => { %>
+                        <div class="col">
+                            <div>
+                                <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= anime.coverImage.large %>" />
+                                    <div>
+                                        <p class="fw-bold text-primary mb-0"><%= anime.title?.romaji ?? "No Title" %></p>
+                                        <a href="/anime/<%= anime.id %>"><p class="text-muted mb-0">View More Info</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                    <% }) %>
+                </div>
+            </div>
+        <% } %>
+        <% if (characters) { %>
+            <div class="container py-4 py-xl-5 text-center">
+                <div class="row mb-5">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h2>All Characters Related To Your Search</h2>
+                    </div>
+                </div>
+                <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                    <% characters.forEach((character) => { %>
+                        <div class="col">
+                            <div>
+                                <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= character.image.large %>" />
+                                    <div>
+                                        <p class="fw-bold text-primary mb-0"><%= character.name?.full ?? "No Name" %></p>
+                                        <a href="/character/<%= character.id %>"><p class="text-muted mb-0">View More Info</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                    <% }) %>
+                </div>
+            </div>
+        <% } %>
+        <% if (users) { %>
+            <div class="container py-4 py-xl-5 text-center">
+                <div class="row mb-5">
+                    <div class="col-md-8 col-xl-6 text-center mx-auto">
+                        <h2>All Users Related To Your Search</h2>
+                    </div>
+                </div>
+                <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                    <% users.forEach((user) => { %>
+                        <div class="col">
+                            <div>
+                                <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= user.avatar.large %>" />
+                                    <div>
+                                        <p class="fw-bold text-primary mb-0"><%= user.name ?? "No Name" %></p>
+                                        <a href="/user/<%= user.id %>"><p class="text-muted mb-0">View More Info</p></a>
+                                    </div>
+                                </div>
+                            </div>
+                    <% }) %>
+                </div>
+            </div>
+        <% } %>
         </section>
         <footer class="bg-dark">
             <div class="container py-4 py-lg-5">
