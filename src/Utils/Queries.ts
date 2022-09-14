@@ -247,6 +247,7 @@ query ($id: Int, $type: MediaType) {
     }
     studios {
       nodes {
+          id
           name
           siteUrl
         }
@@ -255,6 +256,27 @@ query ($id: Int, $type: MediaType) {
     popularity
     averageScore
     episodes
+  }
+}
+`;
+
+export const Studio = `
+query($id: Int) {
+  Studio(id: 1) {
+    id
+    name
+    favourites
+    media {
+      nodes {
+        id
+        title {
+          romaji
+        }
+        coverImage {
+          large
+        }
+      }
+    }
   }
 }
 `;
