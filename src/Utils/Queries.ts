@@ -279,6 +279,7 @@ query($id: Int) {
     age
     media(type: ANIME) {
       nodes {
+        id
         title {
           romaji
         }
