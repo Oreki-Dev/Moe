@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { Character } from "../Utils/Queries";
+import { Studio } from "../Utils/Queries";
 import { AniFetch } from "../Utils/Anilist";
 
 export const studio = async (req: Request, res: Response) => {
@@ -7,7 +7,7 @@ export const studio = async (req: Request, res: Response) => {
     const variables = {
       id: parseInt(id),
     };
-    const { data } = await AniFetch(Character, variables);
+    const { data } = await AniFetch(Studio, variables);
     res.render("studio", {
       studio: data.Studio,
     });

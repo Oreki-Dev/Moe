@@ -262,7 +262,7 @@ query ($id: Int, $type: MediaType) {
 
 export const Studio = `
 query($id: Int) {
-  Studio(id: 1) {
+  Studio(id: $id) {
     id
     name
     favourites
