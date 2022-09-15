@@ -10,6 +10,7 @@ import * as UserController from "./Controllers/UserController";
 import * as StudioController from "./Controllers/StudioController";
 import * as SearchController from "./Controllers/SearchController";
 import * as ChartController from "./Controllers/ChartController";
+import * as GenreController from "./Controllers/GenreController";
 
 const App = express();
 
@@ -38,6 +39,7 @@ App.get("/studio/:id", StudioController.studio);
 App.get("/search", SearchController.index);
 App.get("/chart", ChartController.chart);
 App.get("/schedule", ChartController.schedule);
+App.get("/genre/:name", GenreController.genre);
 
 App.post("/search", SearchController.postIndex);
 

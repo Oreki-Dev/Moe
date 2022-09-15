@@ -264,6 +264,29 @@ query($id: Int) {
 }
 `;
 
+export const Genre = `
+query($page: Int, $genre: Array) {
+  Page(page: $page) {
+    pageInfo {
+      total
+      perPage
+      currentPage
+      lastPage
+      hasNextPage
+    }
+    media(genre_in: $genre, sort: TRENDING_DESC) {
+      id
+      title {
+        romaji
+      }
+      coverImage {
+        large
+      }
+    }
+  }
+}
+`;
+
 export const SearchAnime = `
 query($page: Int, $search: String) {
   Page(page: $page) {

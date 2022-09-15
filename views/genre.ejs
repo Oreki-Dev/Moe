@@ -75,7 +75,7 @@
                 <div class="container py-4 py-xl-5 text-center">
                     <div class="row mb-5">
                         <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2>All Animes Related To Your Search</h2>
+                            <h2>All Animes Related To This Genre</h2>
                         </div>
                     </div>
                     <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
@@ -92,51 +92,16 @@
                             </div>
                         <% }) %>
                     </div>
-                </div>
-            <% } %>
-            <% if (characters) { %>
-                <div class="container py-4 py-xl-5 text-center">
                     <div class="row mb-5">
-                        <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2>All Characters Related To Your Search</h2>
-                        </div>
-                    </div>
-                    <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
-                        <% characters.forEach((character) => { %>
-                            <div class="col">
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= character.image.large %>" />
-                                        <div>
-                                            <p class="fw-bold text-primary mb-0"><%= character.name?.full ?? "No Name" %></p>
-                                            <a href="/character/<%= character.id %>"><p class="text-muted mb-0">View More Info</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <% }) %>
-                    </div>
-                </div>
-            <% } %>
-            <% if (users) { %>
-                <div class="container py-4 py-xl-5 text-center">
-                    <div class="row mb-5">
-                        <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h2>All Users Related To Your Search</h2>
-                        </div>
-                    </div>
-                    <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
-                        <% users.forEach((user) => { %>
-                            <div class="col">
-                                <div class="d-flex flex-column justify-content-center align-items-center">
-                                    <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= user.avatar.large %>" />
-                                        <div class="d-flex flex-column justify-content-center align-items-center">
-                                            <p class="fw-bold text-primary mb-0"><%= user.name ?? "No Name" %></p>
-                                            <a href="/user/<%= user.id %>"><p class="text-muted mb-0">View More Info</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        <% }) %>
+                        <nav class="d-flex align-items-center justify-content-center">
+                            <ul class="pagination">
+                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=1">1</a></li>
+                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=2">2</a></li>
+                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=3">3</a></li>
+                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=4">4</a></li>
+                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=5">5</a></li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             <% } %>
