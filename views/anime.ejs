@@ -50,7 +50,7 @@
                                           <span class="badge bg-primary mb-2">End: <%= anime.endDate?.day ?? "0" %>/<%= anime.endDate?.month ?? "0" %>/<%= anime.endDate?.year ?? "0" %></span>  
                                           <p class="card-text"><%= replaceHtml(anime.description) ?? "No Description" %></p>
                                           <span class="card-text">Genres: <% anime.genres.forEach((genre) => { %>
-                                          <a href="/genre/<%= genre %>">genre </a>
+                                          <a href="/genre/<%= genre.replace(/ /g, '+') %>"><%= genre %> </a>
                                           <% }) %></span>
                                         </div>
                                     </div>
