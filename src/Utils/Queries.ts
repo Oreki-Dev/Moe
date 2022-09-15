@@ -274,7 +274,7 @@ query($page: Int, $genre: Array) {
       lastPage
       hasNextPage
     }
-    media(genre_in: $genre, sort: TRENDING_DESC) {
+    media(genre_in: [$genre], sort: TRENDING_DESC) {
       id
       title {
         romaji

@@ -62,7 +62,7 @@
                                 </div>
                                 <div><button class="btn btn-primary shadow d-block w-100" type="submit">Send </button></div>
                                 <% if (error) { %>
-                                    <div class="alert alert-success" role="alert" style="margin-top: 19px;"><span><strong>Alert</strong> <%= error %></span></div>
+                                    <div class="alert alert-danger" role="alert" style="margin-top: 19px;"><span><strong>Alert</strong> <%= error %></span></div>
                                 <% } %>
                             </form>
                         </div>
@@ -76,6 +76,15 @@
                     <div class="row mb-5">
                         <div class="col-md-8 col-xl-6 text-center mx-auto">
                             <h2>All Animes Related To This Genre</h2>
+                            <nav class="d-flex align-items-center justify-content-center">
+                                <ul class="pagination">
+                                    <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=1">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=2">2</a></li>
+                                    <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=3">3</a></li>
+                                    <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=4">4</a></li>
+                                    <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=5">5</a></li>
+                                </ul>
+                            </nav>
                         </div>
                     </div>
                     <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
@@ -91,17 +100,6 @@
                                 </div>
                             </div>
                         <% }) %>
-                    </div>
-                    <div class="row mb-5">
-                        <nav class="d-flex align-items-center justify-content-center">
-                            <ul class="pagination">
-                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=1">1</a></li>
-                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=2">2</a></li>
-                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=3">3</a></li>
-                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=4">4</a></li>
-                                <li class="page-item"><a class="page-link" href="/genre/<%= genre %>?page=5">5</a></li>
-                            </ul>
-                        </nav>
                     </div>
                 </div>
             <% } %>

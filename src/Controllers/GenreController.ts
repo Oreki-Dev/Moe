@@ -33,7 +33,7 @@ export const genre = async (req: Request, res: Response) => {
 
     const variables = {
         page: parseInt(query),
-        genre: [genre]
+        genre: genre
     }
 
     try {
