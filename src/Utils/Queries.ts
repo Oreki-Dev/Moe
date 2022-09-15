@@ -9,42 +9,19 @@ export const AiringUpcoming = `query ($page: Int, $seasonYear: Int, $season: Med
       }
       media(seasonYear: $seasonYear, season: $season, format: TV, sort: $sort) {
         id
-        averageScore
         coverImage {
           large
-          medium
         }
         description
         episodes
-        endDate {
-          year
-          month
-          day
-        }
-        genres
         nextAiringEpisode {
           id
           airingAt
           timeUntilAiring
           episode
         }
-        popularity
-        season
-        siteUrl
-        source
-        startDate {
-          year
-          month
-          day
-        }
         status
-        studios(isMain: true) {
-          nodes {
-            id
-            name
-          }
-        }
-        title{
+        title {
           romaji
         }
       }
@@ -58,7 +35,7 @@ query ($page: Int) {
           name {
               full
           }
-          description 
+          description(asHtml: true)
           image {
               large
               medium
@@ -74,44 +51,6 @@ query ($page: Int) {
           }
       }
   }
-}
-`;
-
-export const Profile = `
-query ($name: String) {
-  User(name: $name) {
-      statistics {
-        anime {
-          count
-          minutesWatched
-          episodesWatched
-        }
-      }
-    }
-    MediaListCollection(userName: $name, type: ANIME) {
-      lists {
-        name
-        entries {
-          status
-          media {
-              title {
-                  romaji
-              }
-              siteUrl
-              id
-              averageScore
-              coverImage {
-                large
-                medium
-             }
-             description
-             episodes
-             popularity
-             source
-          }
-        }
-      }
-    }
 }
 `;
 
@@ -132,37 +71,14 @@ query ($page: Int, $start: Int, $end: Int) {
           averageScore
           coverImage {
             large
-            medium
          }
          description
          episodes
-         startDate {
-            year
-            month
-            day
-         }
-         endDate {
-            year
-           month
-           day
-         }
-         genres
          nextAiringEpisode {
             id
             airingAt
             timeUntilAiring
             episode
-         }
-         popularity
-         season
-         siteUrl
-         source
-         status
-         studios(isMain: true) {
-            nodes {
-                id
-                name
-            }
          }
          title {
             romaji
