@@ -265,7 +265,7 @@ query($id: Int) {
 `;
 
 export const Genre = `
-query($page: Int, $genre: Array) {
+query($page: Int, $genre: String) {
   Page(page: $page) {
     pageInfo {
       total
