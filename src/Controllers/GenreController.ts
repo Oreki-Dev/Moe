@@ -3,25 +3,25 @@ import { Genre } from "../Utils/Queries";
 import { AniFetch } from "../Utils/Anilist";
 
 const GenreCollection: string[] = [
-    "Action",
-    "Adventure",
-    "Comedy",
-    "Drama",
-    "Ecchi",
-    "Fantasy",
-    "Hentai",
-    "Horror",
-    "Mahou Shoujo",
-    "Mecha",
-    "Music",
-    "Mystery",
-    "Psychological",
-    "Romance",
-    "Sci-Fi",
-    "Slice of Life",
-    "Sports",
-    "Supernatural",
-    "Thriller"
+    "action",
+    "adventure",
+    "comedy",
+    "drama",
+    "ecchi",
+    "fantasy",
+    "hentai",
+    "horror",
+    "mahou-shoujo",
+    "mecha",
+    "music",
+    "mystery",
+    "msychological",
+    "romance",
+    "sci-Fi",
+    "slice-of-life",
+    "sports",
+    "supernatural",
+    "shriller"
   ];
 
 export const genre = async (req: Request, res: Response) => {
@@ -33,7 +33,7 @@ export const genre = async (req: Request, res: Response) => {
 
     const variables = {
         page: parseInt(query),
-        genre: genre
+        genre: genre.replace("-", " ").replace("-", " ")
     }
 
     try {
