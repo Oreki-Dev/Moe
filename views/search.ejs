@@ -127,7 +127,7 @@
                     <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
                         <% users.forEach((user) => { %>
                             <div class="col">
-                                <div>
+                                <div class="d-flex flex-column justify-content-center align-items-center">
                                     <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= user.avatar.large %>" />
                                         <div class="d-flex flex-column justify-content-center align-items-center">
                                             <p class="fw-bold text-primary mb-0"><%= user.name ?? "No Name" %></p>
