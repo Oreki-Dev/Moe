@@ -324,7 +324,7 @@ query($id: Int) {
     image {
       large
     }
-    description
+    description(asHtml: true)
     gender
     dateOfBirth {
       year
