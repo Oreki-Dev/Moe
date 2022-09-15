@@ -14,6 +14,7 @@ export const chart = async (req: Request, res: Response) => {
         };
         const { data } = await AniFetch(AiringUpcoming, variables);
         res.render("chart", {
+          airing: true,
           animes: data.Page.media,
         });
     } else if (season.toLowerCase() === "upcoming") {
@@ -25,6 +26,7 @@ export const chart = async (req: Request, res: Response) => {
           };
           const { data } = await AniFetch(AiringUpcoming, variables);
           await res.render("chart", {
+            airing: false,
             animes: data.Page.media,
           });
     } else {

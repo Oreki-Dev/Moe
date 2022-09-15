@@ -45,10 +45,17 @@
                 <div class="container bg-dark py-5">
                     <div class="row">
                         <div class="col-md-8 col-xl-6 text-center mx-auto">
-                            <h3 class="fw-bold mb-2">This Season's Airing Anime -</h3>
-                            <a href="/chart?season=upcoming">
-                                <p class="mb-2"><small class="text-muted">Want To View Upcoming Anime? Click Me</small></p>
-                            </a>
+                            <% if (airing) { %>
+                                <h3 class="fw-bold mb-2">This Season's Airing Anime -</h3>
+                                <a href="/chart?season=upcoming">
+                                    <p class="mb-2"><small class="text-muted">Want To View Upcoming Anime? Click Me</small></p>
+                                </a>
+                            <% } else { %>
+                                <h3 class="fw-bold mb-2">Next Season's Upcoming Anime -</h3>
+                                <a href="/chart?season=airing">
+                                    <p class="mb-2"><small class="text-muted">Want To View Airing Anime? Click Me</small></p>
+                                </a>
+                            <% } %>
                         </div>
                     </div>
                     <div class="py-5 p-lg-5">
