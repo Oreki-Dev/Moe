@@ -3,7 +3,7 @@ import { AiringUpcoming } from "../Utils/Queries";
 import { AniFetch, Season, NextSeason } from "../Utils/Anilist";
 
 export const chart = async (req: Request, res: Response) => {
-    const season: string = req.query.type as string;
+    const season: string = req.query.season as string;
     if (!season) return res.redirect("/chart?season=airing")
     if (season.toLowerCase() === "airing") {
         const variables = {
