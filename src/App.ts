@@ -9,6 +9,7 @@ import * as CharacterController from "./Controllers/CharacterController";
 import * as UserController from "./Controllers/UserController";
 import * as StudioController from "./Controllers/StudioController";
 import * as SearchController from "./Controllers/SearchController";
+import * as ChartController from "./Controllers/ChartController";
 
 const App = express();
 
@@ -35,6 +36,7 @@ App.get("/character/:id", CharacterController.character);
 App.get("/user/:id", UserController.user);
 App.get("/studio/:id", StudioController.studio);
 App.get("/search", SearchController.index);
+App.get("/chart", ChartController.chart);
 
 App.post("/search", SearchController.postIndex);
 

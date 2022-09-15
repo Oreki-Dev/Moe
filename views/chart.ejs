@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Moe | Chart</title>
+        <meta name="theme-color" content="#5865F2">
+        <meta property="og:url" content="/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Moe | Anime">
+        <meta property="og:description" content="See Anime Airing And Upcoming Schedule">
+        <%- include('partials/icon') %>
+        <meta property="og:site_name" content="Anime Is My Moe">
+        <%- include('partials/css') %>
+    </head>
+    <body style="/*background: url(&quot;design.jpg&quot;);*/ background-position: 0 -60px">
+        <nav class="navbar navbar-dark navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/"><span>Moe</span></a
+                ><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                    <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="/search">Search</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/schedule">See Schedule</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            <section>
+                <div class="container bg-dark py-5">
+                    <div class="py-5 p-lg-5">
+                        <div class="row row-cols-1 row-cols-md-2 mx-auto" style="max-width: 900px">
+                            <% animes.forEach((anime) => { %>
+                                <div class="card mb-3 text-center">
+                                    <div class="row">
+                                      <div class="col-md-12">
+                                        <img src="<%= anime.coverImage.large %>" class="img-fluid rounded-start">
+                                      </div>
+                                      <div class="col-md-12">
+                                        <div class="card-body">
+                                          <h5 class="card-title"><%= anime.title?.romaji ?? "No Title" %></h5>
+                                          <p class="card-text">
+                                            Episode <%= anime.nextAiringEpisode?.episode ? anime.nextAiringEpisode.episode : "?" %> Airs In <%= anime.nextAiringEpisode?.timeUntilAiring ? Math.floor(anime.nextAiringEpisode.timeUntilAiring / (3600 * 24) % 365) : "?"
+                                            %> Days <%= anime.nextAiringEpisode?.timeUntilAiring ? Math.floor((anime.nextAiringEpisode.timeUntilAiring / 3600) % 24) : "?" %> Hours <%=
+                                            anime.nextAiringEpisode?.timeUntilAiring ? Math.floor((anime.nextAiringEpisode.timeUntilAiring / 60) % 60) : "?" %> Minutes
+                                          </p>
+                                          <a href="/anime/<%= anime.id %>">
+                                            <p class="card-text"><small class="text-muted">View More Info</small></p>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                            <% }) %>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        <footer class="bg-dark">
+            <div class="container py-4 py-lg-5">
+                <hr />
+                <div class="text-center text-muted justify-content-between align-items-center pt-3">
+                    <p class="mb-0">Copyright © 2022 Moe</p>
+                    <a href="https://anilist.co/"><p class="mb-0">This Website Was Made With The Help Of Anilist</p></a>
+                </div>
+            </div>
+        </footer>
+        <%- include('partials/js') %>
+    </body>
+</html>
