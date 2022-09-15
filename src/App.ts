@@ -21,12 +21,6 @@ const limiter = rateLimit({
   handler: (req: Request, res: Response) => res.render("rateLimited"),
 });
 
-const ErrorHandler = (err: Error, req: Request, res: Response) => {
-  res.render("error", {
-    err: err.stack
-  })
-};
-
 App.set("view engine", "ejs");
 App.use(compression());
 App.use(bodyParser.json());
@@ -35,7 +29,6 @@ App.disable("x-powered-by");
 App.use(express.static("public"));
 
 App.use(limiter);
-App.use(ErrorHandler);
 
 App.get("/", HomeController.index);
 App.get("/anime/:id", AnimeController.anime);
