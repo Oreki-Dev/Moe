@@ -37,6 +37,7 @@ App.get("/user/:id", UserController.user);
 App.get("/studio/:id", StudioController.studio);
 App.get("/search", SearchController.index);
 App.get("/chart", ChartController.chart);
+App.get("/schedule", ChartController.schedule);
 
 App.post("/search", SearchController.postIndex);
 
