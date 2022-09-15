@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
-import { AiringUpcoming } from "../Utils/Queries";
+import { AiringUpcoming, Schedule } from "../Utils/Queries";
 import { AniFetch, Season, NextSeason } from "../Utils/Anilist";
+import moment from "moment";
 
 export const chart = async (req: Request, res: Response) => {
     const season: string = req.query.season as string;
@@ -33,3 +34,16 @@ export const chart = async (req: Request, res: Response) => {
         return res.redirect("/chart?season=airing")
     }
   };
+
+  export const schedule = async (req: Request, res: Response) => {
+    const variables = {
+      page: 1,
+      start: moment().startOf("day").unix(),
+      end: moment().endOf("day").unix(),
+    };
+    const { data } = await AniFetch(Schedule, variables);
+    await res.render("schedule", {
+      moment: moment,
+      animes: data.Page.airingSchedules,
+    })
+  }
