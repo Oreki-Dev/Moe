@@ -17,7 +17,7 @@ const GenreCollection: string[] = [
     "mystery",
     "msychological",
     "romance",
-    "sci-Fi",
+    "sci-fi",
     "slice-of-life",
     "sports",
     "supernatural",
