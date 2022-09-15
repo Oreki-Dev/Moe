@@ -26,7 +26,7 @@ const GenreCollection: string[] = [
 
 export const genre = async (req: Request, res: Response) => {
     const genre: string = req.params.name as string
-    if (!GenreCollection.includes(genre)) return res.render("404")
+    if (!GenreCollection.includes(genre.toLowerCase())) return res.render("404")
 
     let query: string = req.query.page as string
     if (!query) query = "1"
