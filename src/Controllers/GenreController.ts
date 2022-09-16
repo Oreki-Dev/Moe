@@ -17,7 +17,7 @@ const GenreCollection: string[] = [
     "mystery",
     "msychological",
     "romance",
-    "sci-Fi",
+    "sci-fi",
     "slice-of-life",
     "sports",
     "supernatural",
@@ -25,15 +25,21 @@ const GenreCollection: string[] = [
   ];
 
 export const genre = async (req: Request, res: Response) => {
-    const genre: string = req.params.name as string
-    if (!GenreCollection.includes(genre)) return res.render("404")
+    let genre: string = req.params.name as string
+    if (!GenreCollection.includes(genre.toLowerCase())) return res.render("404")
 
     let query: string = req.query.page as string
     if (!query) query = "1"
 
+    if (genre.toLowerCase().startsWith("sci")) {
+      genre = genre
+    } else {
+      genre = genre.replace("-", " ").replace("-", " ")
+    }
+
     const variables = {
         page: parseInt(query),
-        genre: genre.replace("-", " ").replace("-", " ")
+        genre: genre
     }
 
     try {
