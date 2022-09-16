@@ -19,7 +19,7 @@ export function AniFetch(query: string, variables: object) {
     )
     .then((response: any) => response.data)
     .catch((err: Error) => console.log(err));
-};
+}
 
 export function Season() {
   const month = date.getMonth();
@@ -33,7 +33,7 @@ export function Season() {
   } else {
     return { seasonYear: date.getFullYear(), season: "FALL" };
   }
-};
+}
 
 export function NextSeason() {
   const month = date.getMonth();
@@ -47,4 +47,4 @@ export function NextSeason() {
   } else {
     return { seasonYear: date.getFullYear() + 1, season: "WINTER" };
   }
-};
+}
