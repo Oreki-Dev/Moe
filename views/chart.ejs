@@ -69,11 +69,17 @@
                                       <div class="col-md-12">
                                         <div class="card-body">
                                           <h5 class="card-title"><%= anime.title?.romaji ?? "No Title" %></h5>
-                                          <p class="card-text">
-                                            Episode <%= anime.nextAiringEpisode?.episode ? anime.nextAiringEpisode.episode : "?" %> Airs In <%= anime.nextAiringEpisode?.timeUntilAiring ? Math.floor(anime.nextAiringEpisode.timeUntilAiring / (3600 * 24) % 365) : "?"
-                                            %> Days <%= anime.nextAiringEpisode?.timeUntilAiring ? Math.floor((anime.nextAiringEpisode.timeUntilAiring / 3600) % 24) : "?" %> Hours <%=
-                                            anime.nextAiringEpisode?.timeUntilAiring ? Math.floor((anime.nextAiringEpisode.timeUntilAiring / 60) % 60) : "?" %> Minutes
-                                          </p>
+                                          <% if (anime.nextAiringEpisode) { %>
+                                            <p class="card-text">
+                                                Episode <%= anime.nextAiringEpisode.episode ? anime.nextAiringEpisode.episode : "?" %> Airs In <%= anime.nextAiringEpisode.timeUntilAiring ? Math.floor(anime.nextAiringEpisode.timeUntilAiring / (3600 * 24) % 365) : "?"
+                                                %> Days <%= anime.nextAiringEpisode.timeUntilAiring ? Math.floor((anime.nextAiringEpisode.timeUntilAiring / 3600) % 24) : "?" %> Hours <%=
+                                                anime.nextAiringEpisode.timeUntilAiring ? Math.floor((anime.nextAiringEpisode.timeUntilAiring / 60) % 60) : "?" %> Minutes
+                                            </p>
+                                          <% } else { %>
+                                            <p class="card-text">
+                                                Finished Airing
+                                            </p>
+                                          <% } %>  
                                           <a href="/anime/<%= anime.id %>">
                                             <p class="card-text"><small class="text-muted">View More Info</small></p>
                                           </a>
