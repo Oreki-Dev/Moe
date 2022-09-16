@@ -274,7 +274,7 @@ query($page: Int, $genre: String) {
       lastPage
       hasNextPage
     }
-    media(genre_in: [$genre], sort: TRENDING_DESC) {
+    media(genre_in: [$genre], type: ANIME, sort: TRENDING_DESC) {
       id
       title {
         romaji
