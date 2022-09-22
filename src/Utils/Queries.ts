@@ -32,20 +32,13 @@ export const Birthdays = `
 query ($page: Int) {
   Page(page: $page) {
       characters(isBirthday: true, sort: FAVOURITES_DESC) {
+          id
           name {
               full
           }
-          description(asHtml: true)
           image {
               large
               medium
-          }
-          media {
-              nodes {
-                  title {
-                      romaji
-                  }
-              }
           }
       }
   }

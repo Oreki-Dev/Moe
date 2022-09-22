@@ -11,6 +11,7 @@ import * as StudioController from "./Controllers/StudioController";
 import * as SearchController from "./Controllers/SearchController";
 import * as ChartController from "./Controllers/ChartController";
 import * as GenreController from "./Controllers/GenreController";
+import * as BirthdayController from "./Controllers/BirthdayController";
 
 const App = express();
 
@@ -40,6 +41,7 @@ App.get("/search", SearchController.index);
 App.get("/chart", ChartController.chart);
 App.get("/schedule", ChartController.schedule);
 App.get("/genre/:name", GenreController.genre);
+App.get("/birthdays", BirthdayController.birthday);
 
 App.post("/search", SearchController.postIndex);
 

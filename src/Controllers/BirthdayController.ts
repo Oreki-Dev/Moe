@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Birthdays } from "../Utils/Queries";
 import { AniFetch } from "../Utils/Anilist";
 
-export const anime = async (req: Request, res: Response) => {
+export const birthday = async (req: Request, res: Response) => {
   const variables = {
     page: 1
   };
