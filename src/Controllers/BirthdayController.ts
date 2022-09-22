@@ -4,10 +4,10 @@ import { AniFetch } from "../Utils/Anilist";
 
 export const birthday = async (req: Request, res: Response) => {
   const variables = {
-    page: 1
+    page: 1,
   };
   const { data } = await AniFetch(Birthdays, variables);
   res.render("birthday", {
-    characters: data.Page.characters
+    characters: data.Page.characters,
   });
 };
