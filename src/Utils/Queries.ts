@@ -194,6 +194,17 @@ query($id: Int) {
           }
         }
       }
+      characters {
+        nodes {
+          id
+          name {
+            full
+          }
+          image {
+            large
+          }
+        }
+      }
     }
   }
 }
