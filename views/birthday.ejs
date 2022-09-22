@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+        <title>Moe | Birthdays</title>
+        <meta name="theme-color" content="#5865F2">
+        <meta property="og:url" content="/">
+        <meta property="og:type" content="website">
+        <meta property="og:title" content="Moe | Anime">
+        <meta property="og:description" content="Find Out Anime Characters Having Birthday Today">
+        <%- include('partials/icon') %>
+        <meta property="og:site_name" content="Anime Is My Moe">
+        <%- include('partials/css') %>
+    </head>
+    <body style="/*background: url(&quot;design.jpg&quot;);*/ background-position: 0 -60px">
+        <nav class="navbar navbar-dark navbar-expand-md fixed-top navbar-shrink py-3" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="/"><span>Moe</span></a
+                ><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+                    <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link active" href="/search">Search</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/chart">See Airing Chart</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="/schedule">See Schedule</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+            <section>
+                <div class="container py-4 py-xl-5 text-center">
+                    <div class="row mb-5">
+                        <div class="col-md-8 col-xl-6 text-center mx-auto">
+                            <h2>Characters Having Birthday Today</h2>
+                        </div>
+                    </div>
+                    <div class="row gy-4 row-cols-1 row-cols-sm-2 row-cols-lg-3">
+                        <% characters.forEach((character) => { %>
+                            <div class="col">
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <div class="d-flex"><img class="rounded-circle flex-shrink-0 me-3 fit-cover" width="50" height="50" src="<%= character.image.large %>" />
+                                        <div>
+                                            <p class="fw-bold text-primary mb-0"><%= character.name.full %></p>
+                                            <a href="/character/<%= character.id %>"><p class="text-muted mb-0">View More Info</p></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </section>
+        <%- include('partials/footer') %>
+        <%- include('partials/js') %>
+    </body>
+</html>

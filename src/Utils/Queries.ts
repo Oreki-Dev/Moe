@@ -40,8 +40,6 @@ query ($page: Int) {
               large
               medium
           }
-          siteUrl
-          favourites
           media {
               nodes {
                   title {
