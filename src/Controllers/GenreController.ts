@@ -15,7 +15,7 @@ const GenreCollection: string[] = [
   "mecha",
   "music",
   "mystery",
-  "msychological",
+  "psychological",
   "romance",
   "sci-fi",
   "slice-of-life",
