@@ -52,7 +52,7 @@ export const genre = async (req: Request, res: Response) => {
   } catch (error) {
     res.render("genre", {
       error: "An Error Happened",
-      genre: genre,
+      genre: null,
       animes: null,
     });
   }
