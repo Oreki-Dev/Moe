@@ -51,4 +51,5 @@ export const postIndex = async (req: Request, res: Response) => {
       users: null,
     });
   }
+  
 };
