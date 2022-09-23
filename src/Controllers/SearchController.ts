@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { SearchAnime, SearchCharacter, SearchUser } from "../Utils/Queries";
 import { AniFetch } from "../Utils/Anilist";
+import App from "../App";
 
 export const index = (req: Request, res: Response) => {
   return res.render("search", {
@@ -24,11 +25,13 @@ export const postIndex = async (req: Request, res: Response) => {
   const CharacterResults = await AniFetch(SearchCharacter, variables);
   const UserResults = await AniFetch(SearchUser, variables);
 
-  res.render("searchResults", {
+  App.render("searchResults", {
     error: null,
     animes: AnimeResults.data.Page.media.length < 0 ? null : AnimeResults.data.Page.media,
-    characters: CharacterResults.data.Page.media.length < 0 ? null : CharacterResults.data.Page.media,
-    users: UserResults.data.Page.media.length < 0 ? null : UserResults.data.Page.media,
+    characters: CharacterResults.data.Page.characters.length < 0 ? null : CharacterResults.data.Page.characters,
+    users: UserResults.data.Page.users.length < 0 ? null : UserResults.data.Page.users,
+  }, function (err: any, html: any) {
+    return html
   })
   
   /*if (option === "anime") {
