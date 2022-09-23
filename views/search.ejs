@@ -54,13 +54,6 @@
                         <div>
                             <form class="p-3 p-xl-4" action="search" method="post">
                                 <div class="mb-3"><input id="name-1" class="form-control text-primary" type="text" name="name" placeholder="Name" required/></div>
-                                <div class="mb-3">
-                                    <select id="select-1" type="text" name="option" class="form-select" aria-label="Anime">
-                                        <option value="anime">Anime</option>
-                                        <option value="character">Character</option>
-                                        <option value="user">User</option>
-                                    </select>
-                                </div>
                                 <div><button class="btn btn-primary shadow d-block w-100" type="submit">Send </button></div>
                                 <% if (error) { %>
                                     <div class="alert alert-danger" role="alert" style="margin-top: 19px;"><span><strong>Alert</strong> <%= error %></span></div>
@@ -71,7 +64,7 @@
                 </div>
             </div>
         </section>
-        <div class="conatiner py-5 py-xl-5">
+        <div id="content" class="conatiner py-5 py-xl-5">
             <% if (animes) { %>
                 <div class="container py-4 py-xl-5 text-center">
                     <div class="row mb-5">
@@ -142,6 +135,22 @@
                 </div>
             <% } %>
         </div>
+        <script>
+            function getData() {
+              let name = $("#name-1").val()
+              
+              $.ajax({
+                type: "POST",
+                url: "/search",
+                data: {
+                  name: name,
+                },
+                success: function(response_data) {
+                    $("").html(response_data)
+                }
+              })
+            }
+        </script>
         <%- include('partials/footer') %>
         <%- include('partials/js') %>
     </body>

@@ -13,13 +13,25 @@ export const index = (req: Request, res: Response) => {
 
 export const postIndex = async (req: Request, res: Response) => {
   const search: string = req.body.name as string;
-  const option: string = req.body.option as string;
+  // const option: string = req.body.option as string;
 
   const variables = {
     page: 1,
     search: search,
   };
-  if (option === "anime") {
+
+  const AnimeResults = await AniFetch(SearchAnime, variables);
+  const CharacterResults = await AniFetch(SearchCharacter, variables);
+  const UserResults = await AniFetch(SearchUser, variables);
+
+  res.render("searchResults", {
+    error: null,
+    animes: AnimeResults.data.Page.media.length < 0 ? null : AnimeResults.data.Page.media,
+    characters: CharacterResults.data.Page.media.length < 0 ? null : CharacterResults.data.Page.media,
+    users: UserResults.data.Page.media.length < 0 ? null : UserResults.data.Page.media,
+  })
+  
+  /*if (option === "anime") {
     const { data } = await AniFetch(SearchAnime, variables);
     return res.render("search", {
       error: null,
@@ -50,5 +62,5 @@ export const postIndex = async (req: Request, res: Response) => {
       characters: null,
       users: null,
     });
-  }
+  }*/
 };
