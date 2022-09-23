@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { SearchAnime, SearchCharacter, SearchUser } from "../Utils/Queries";
 import { AniFetch } from "../Utils/Anilist";
+import App from "../App";
 
 export const index = (req: Request, res: Response) => {
   return res.render("search", {
@@ -19,6 +20,7 @@ export const postIndex = async (req: Request, res: Response) => {
     page: 1,
     search: search,
   };
+
   if (option === "anime") {
     const { data } = await AniFetch(SearchAnime, variables);
     return res.render("search", {
