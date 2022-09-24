@@ -37,3 +37,16 @@ npm run start
 // lint
 npm run lint
 ```
+
+<h3 align="center">
+  Images - 
+</h3>
+
+-   **Home Page**
+    <img src="https://github.com/Oreki-Dev/Moe/blob/main/public/images/Homepage.png?raw=true">
+-   **Search Page**
+    <img src="https://github.com/Oreki-Dev/Moe/blob/main/public/images/Searchpage.png?raw=true">
+-   **Airing Page**
+    <img src="https://github.com/Oreki-Dev/Moe/blob/main/public/images/Airingpage.png?raw=true">
+-   **Birthdays Page**
+    <img src="https://github.com/Oreki-Dev/Moe/blob/main/public/images/Birthdaypage.png?raw=true">
