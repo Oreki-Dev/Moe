@@ -3,6 +3,8 @@
 </p>
 <p align="center"> 
   Anime Website Made With The Help Of <a href="https://anilist.co" target="_blank">Anilist</a> <a href="https://graphql.org" target="_blank">GraphQL</a> API.
+  <br />
+  <a href="https://moe.cluster.ws">Moe</a> Does Not Run On Code From This Repository Anymore It Has Been Migrated To Next.js And A Private Repository 
 </p>
 
 <h3 align="center">Languages and Tools Used:</h3>
